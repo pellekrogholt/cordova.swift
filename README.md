@@ -30,13 +30,6 @@ Make Cordova hooks executable
 
     $ find hooks/ -name '*.js' | xargs chmod +x
 
-todo ~ do it with npm roughly:
-
-    ...
-    "scripts": {
-    "postinstall": "find hooks/ -name '*.js' | xargs chmod +x"
-    }
-
 Ok lets add ios:
 
     $ cordova platform add ios
@@ -46,8 +39,8 @@ Now we are finally ready to `run`:
 
     $ cordova run ios
 
-Dont emulate because all hooks not set up for that ~ simply always use `run`
-it fallbacks to `emulate` but still ensures that the required hook was done.
+Don't emulate because all hooks not set up for that ~ simply always use `run`
+it fall-backs to `emulate` but still ensures that the required hook was done.
 
 ## Inspect ios project in Xcode
 
@@ -56,6 +49,21 @@ it fallbacks to `emulate` but still ensures that the required hook was done.
 Don't modify the ios project under `PROJECT_DIR/platforms` it likely
 get removed and/or modified because we move the required parts from
 `PROJECT_DIR/ios-app` with Cordova hooks.
+
+
+## Todo
+
+- Clean up swift code for missing migrations.
+- Clean up hooks for missing files not copied, added and removed etc..?
+- Optimize the hooks and reuse common functions ~ walk is a number 1 candidate :)
+- If possible add the executabel task to `npm install` roughly:
+
+    ...
+    "scripts": {
+    "postinstall": "find hooks/ -name '*.js' | xargs chmod +x"
+    }
+
+
 
 ----
 <masahiro.suzuka@gmail.com>
