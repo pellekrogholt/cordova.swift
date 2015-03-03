@@ -5,3 +5,11 @@
 /platforms/
 /plugins/
 /www/lib
+
+
+#########
+# XCode #
+#########
+
+
+ios-app/**/*project.xcworkspace
