@@ -1,0 +1,14 @@
+{
+  "version": "0.0.0",
+  "private": true,
+  "name": "cordova.swift",
+  "description": "swift based cordova app",
+  "repository": "",
+  "license": "",
+  "dependencies": {
+    "ignore": "2.2.14",
+    "fs-extra": "0.10.0"
+  },
+  "devDependencies": {
+  }
+}

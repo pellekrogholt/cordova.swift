@@ -6,26 +6,57 @@
 
 This project is porting Swift to the Apache Cordova.
 
+Currently based upon this version of Cordova:
+
+    $ cordova --version
+    3.6.3-0.2.13
 
 ## Objective & Goals
 
-* Provide Swift-langage based project template to Corodova user.
+* Provide Swift-language based project template to Cordova user.
 * Porting to the Swift Cordova.
 
+It can be used for Cordova projects that have native code not served
+within separate plugins. Lets say code that should always run even
+when Cordova app is closed.
 
 ## Install
 
-1. Follow this command
+    $ git clone https://github.com/masahirosuzuka/cordova.swift.git
+    $ cd cordova.swift
+    $ npm install
 
-```
-git clone https://github.com/masahirosuzuka/cordova.swift.git
-```
+Make Cordova hooks executable
 
-2. Open PROJECT_DIR/platforms/ios/HelloCordova.xcodeproj
+    $ find hooks/ -name '*.js' | xargs chmod +x
 
-## Todo
+todo ~ do it with npm roughly:
 
-* Port to the Swift CordovaLib
+    ...
+    "scripts": {
+    "postinstall": "find hooks/ -name '*.js' | xargs chmod +x"
+    }
+
+Ok lets add ios:
+
+    $ cordova platform add ios
+    $ cordova build ios
+
+Now we are finally ready to `run`:
+
+    $ cordova run ios
+
+Dont emulate because all hooks not set up for that ~ simply always use `run`
+it fallbacks to `emulate` but still ensures that the required hook was done.
+
+## Inspect ios project in Xcode
+
+    $ open PROJECT_DIR/ios-app/HelloCordova.xcodeproj
+
+Don't modify the ios project under `PROJECT_DIR/platforms` it likely
+get removed and/or modified because we move the required parts from
+`PROJECT_DIR/ios-app` with Cordova hooks.
 
 ----
 <masahiro.suzuka@gmail.com>
+<pellekrogholt@gmail.com>
