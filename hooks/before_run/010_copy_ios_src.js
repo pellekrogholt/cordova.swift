@@ -15,7 +15,7 @@ var walk = function(dir) {
 
 console.log('==========================================');
 console.log('hooks/before_run/010_copy_ios_src.js start');
-console.log('==========================================');
+console.log('');
 
 process.chdir('./ios-app/');
 files = walk('HelloCordova/Classes');
@@ -33,6 +33,6 @@ files.forEach(function(file) {
 
 process.chdir('..');
 
-console.log('========================================');
+console.log('');
 console.log('hooks/before_run/010_copy_ios_src.js end');
 console.log('========================================');

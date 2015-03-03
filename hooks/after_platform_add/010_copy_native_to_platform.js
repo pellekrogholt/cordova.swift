@@ -15,8 +15,7 @@ var walk = function(dir) {
 
 console.log('=======================================================');
 console.log('after_platform_add/010_copy_native_to_platform.js start');
-console.log('=======================================================');
-
+console.log('');
 console.log('~~~~~~~~ lets remove some objective-c files ~~~~~~~~~~~');
 process.chdir('platforms/ios/HelloCordova/Classes');
 files = walk('.');
@@ -35,6 +34,6 @@ fs.unlinkSync(mFile);
 
 process.chdir('../../..');
 
-console.log('=====================================================');
+console.log('');
 console.log('after_platform_add/010_copy_native_to_platform.js end');
 console.log('=====================================================');

@@ -16,7 +16,7 @@ var walk = function(dir) {
 
 console.log('=================================================');
 console.log('before_build/010_copy_native_to_platform.js start');
-console.log('=================================================');
+console.log('');
 
 process.chdir('./ios-app/');
 files = walk('.');
@@ -59,7 +59,6 @@ files.forEach(function(file) {
 
 process.chdir('..');
 
-
-console.log('===============================================');
+console.log('');
 console.log('before_build/010_copy_native_to_platform.js end');
 console.log('===============================================');
